@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <EditText
+        android:id="@+id/etCName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Card Holder Name"
+        android:fontFamily="@font/tomorrow_medium"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etCNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:maxLength="16"
+        android:hint="Card Number"
+        android:fontFamily="@font/tomorrow_medium"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/etCCvv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="CVV"
+
+        android:maxLength="3"
+        android:fontFamily="@font/tomorrow_medium"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etCDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Expiration Date"
+        android:maxLength="05"
+
+        android:fontFamily="@font/tomorrow_medium"
+
+        android:inputType="date"
+
+        />
+
+    <Button
+        android:id="@+id/btnUpdateData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/Darkgreen"
+        android:text="Update Payment details"
+        android:fontFamily="@font/tomorrow_medium"
+        />
+
+
+</LinearLayout>
