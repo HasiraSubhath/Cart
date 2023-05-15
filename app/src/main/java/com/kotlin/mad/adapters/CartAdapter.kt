@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.kotlin.mad.R
-import com.kotlin.mad.models.PaymentModel
+import com.kotlin.mad.models.CartModel
 
-class PaymentAdapter(private val paymentList: ArrayList<PaymentModel>) :
-    RecyclerView.Adapter<PaymentAdapter.ViewHolder>() {
+class CartAdapter(private val CartList: ArrayList<CartModel>) :
+    RecyclerView.Adapter<CartAdapter.ViewHolder>() {
 
     private lateinit var mListener: onItemClickListener
 
@@ -22,22 +22,22 @@ class PaymentAdapter(private val paymentList: ArrayList<PaymentModel>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.payment_list_item, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.cart_list_item, parent, false)
         return ViewHolder(itemView, mListener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val currentEmp = paymentList[position]
-        holder.tvCName.text = currentEmp.cName
+        val currentEmp = CartList[position]
+        holder.tvPName.text = currentEmp.pName
     }
 
     override fun getItemCount(): Int {
-        return paymentList.size
+        return CartList.size
     }
 
     class ViewHolder(itemView: View, clickListener: onItemClickListener) : RecyclerView.ViewHolder(itemView) {
 
-        val tvCName : TextView = itemView.findViewById(R.id.tvCName)
+        val tvPName : TextView = itemView.findViewById(R.id.tvPName)
 
         init {
             itemView.setOnClickListener {

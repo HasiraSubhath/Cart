@@ -11,6 +11,7 @@
         android:layout_width="525dp"
         android:layout_height="261dp"
         android:layout_marginBottom="276dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/btnInsertData"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

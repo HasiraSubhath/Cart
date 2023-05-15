@@ -6,7 +6,7 @@
     android:padding="10dp">
 
     <EditText
-        android:id="@+id/etCName"
+        android:id="@+id/etPName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -15,7 +15,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/etCNumber"
+        android:id="@+id/etPType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -23,22 +23,22 @@
         android:maxLength="16"
         android:hint="Product Type"
         android:fontFamily="@font/tomorrow_medium"
-        android:inputType="number"/>
+        android:inputType="textPersonName"/>
 
     <EditText
-        android:id="@+id/etCCvv"
+        android:id="@+id/etPPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Price"
 
-        android:maxLength="3"
+
         android:fontFamily="@font/tomorrow_medium"
-        android:inputType="textPersonName" />
+        android:inputType="number" />
 
     <EditText
-        android:id="@+id/etCDate"
+        android:id="@+id/etPQty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -48,7 +48,7 @@
 
         android:fontFamily="@font/tomorrow_medium"
 
-        android:inputType="date"
+        android:inputType="number"
 
         />
 

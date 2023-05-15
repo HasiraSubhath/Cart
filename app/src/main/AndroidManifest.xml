@@ -9,16 +9,16 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Kotlin_payment"
+        android:theme="@style/Theme.Kotlin_Cart"
         tools:targetApi="31">
         <activity
-            android:name=".activities.PaymentDetailsActivity"
+            android:name=".activities.CartDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.PaymentFetchingActivity"
+            android:name=".activities.CartFetchingActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.PaymentInsertionActivity"
+            android:name=".activities.CartInsertionActivity"
             android:exported="false" />
         <activity
             android:name=".activities.MainActivity"

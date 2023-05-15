@@ -7,64 +7,64 @@ import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.kotlin.mad.adapters.PaymentAdapter
-import com.kotlin.mad.models.PaymentModel
+import com.kotlin.mad.adapters.CartAdapter
+import com.kotlin.mad.models.CartModel
 import com.kotlin.mad.R
 import com.google.firebase.database.*
 
-class PaymentFetchingActivity : AppCompatActivity() {
+class CartFetchingActivity : AppCompatActivity() {
 
     private lateinit var empRecyclerView: RecyclerView
     private lateinit var tvLoadingData: TextView
-    private lateinit var paymentList: ArrayList<PaymentModel>
+    private lateinit var CartList: ArrayList<CartModel>
     private lateinit var dbRef: DatabaseReference
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_payment_fetching)
+        setContentView(R.layout.activity_cart_fetching)
 
         empRecyclerView = findViewById(R.id.rvEmp)
         empRecyclerView.layoutManager = LinearLayoutManager(this)
         empRecyclerView.setHasFixedSize(true)
         tvLoadingData = findViewById(R.id.tvLoadingData)
 
-        paymentList = arrayListOf<PaymentModel>()
+        CartList = arrayListOf<CartModel>()
 
-        getPaymentData()
+        getCartData()
 
 
     }
 
-    private fun getPaymentData() {
+    private fun getCartData() {
 
         empRecyclerView.visibility = View.GONE
         tvLoadingData.visibility = View.VISIBLE
 
-        dbRef = FirebaseDatabase.getInstance().getReference("PaymentDB")
+        dbRef = FirebaseDatabase.getInstance().getReference("CartDB")
 
         dbRef.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-               paymentList.clear()
+               CartList.clear()
                 if (snapshot.exists()){
                     for (empSnap in snapshot.children){
-                        val paymentData = empSnap.getValue(PaymentModel::class.java)
-                        paymentList.add(paymentData!!)
+                        val CartData = empSnap.getValue(CartModel::class.java)
+                        CartList.add(CartData!!)
                     }
-                    val mAdapter = PaymentAdapter(paymentList)
+                    val mAdapter = CartAdapter(CartList)
                     empRecyclerView.adapter = mAdapter
 
-                    mAdapter.setOnItemClickListener(object : PaymentAdapter.onItemClickListener{
+                    mAdapter.setOnItemClickListener(object : CartAdapter.onItemClickListener{
                         override fun onItemClick(position: Int) {
 
-                            val intent = Intent(this@PaymentFetchingActivity, PaymentDetailsActivity::class.java)
+                            val intent = Intent(this@CartFetchingActivity, CartDetailsActivity::class.java)
 
                             //put extra(passing data to another activity)
-                            intent.putExtra("cId", paymentList[position].cId)
-                            intent.putExtra("cName", paymentList[position].cName)
-                            intent.putExtra("cNumber", paymentList[position].cNumber)
-                            intent.putExtra("cCvv", paymentList[position].cCvv)
-                            intent.putExtra("cDate", paymentList[position].cDate)
+                            intent.putExtra("pId", CartList[position].pId)
+                            intent.putExtra("pName", CartList[position].pName)
+                            intent.putExtra("pType", CartList[position].pType)
+                            intent.putExtra("pPrice", CartList[position].pPrice)
+                            intent.putExtra("pQty", CartList[position].pQty)
                             startActivity(intent)
                         }
 

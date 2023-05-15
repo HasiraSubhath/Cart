@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context=".activities.PaymentInsertionActivity">
+    tools:context=".activities.CartInsertionActivity">
 
     <TextView
         android:id="@+id/textView3"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etCName"
+        android:id="@+id/etPName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
@@ -41,49 +41,49 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/etCCvv"
+        android:id="@+id/etPPrice"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:ems="10"
         android:fontFamily="@font/tomorrow_medium"
-        android:maxLength="3"
+
         android:hint="Enter Price"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/etPType" />
 
     <EditText
-        android:id="@+id/etCDate"
+        android:id="@+id/etPQty"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="27dp"
         android:ems="10"
         android:fontFamily="@font/tomorrow_medium"
-        android:hint="Enter Expiration Date"
-        android:inputType="date"
+        android:hint="Quantity"
+        android:inputType="number"
         android:maxLength="05"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCCvv" />
+        app:layout_constraintTop_toBottomOf="@+id/etPPrice" />
 
     <EditText
-        android:id="@+id/etCNumber"
+        android:id="@+id/etPType"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
         android:ems="10"
         android:fontFamily="@font/tomorrow_medium"
-        android:hint="Enter Quantity"
-        android:maxLength="16"
-        android:inputType="number"
+        android:hint="Enter Type"
+
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCName" />
+        app:layout_constraintTop_toBottomOf="@+id/etPName" />
 
     <Button
         android:id="@+id/btnSave"
@@ -95,6 +95,6 @@
         android:text="Add To Cart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCDate" />
+        app:layout_constraintTop_toBottomOf="@+id/etPQty" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
